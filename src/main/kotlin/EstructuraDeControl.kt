@@ -130,6 +130,74 @@ fun listas(){
 }
 
 
+// maps: Los mapas son colecciones de pares de clave-valor, exiten 2 tipos tanto como mutables y inmutables.
+fun mapas(){
+    val MyArtistFavorite = mapOf("Ju Jingyi" to 29, "Wang Churan" to 24)
+    println(MyArtistFavorite)
+
+    //MÉTODOS DE ACCESO
+    // .get(key): Devuleve el valor asociado a la clave.
+    MyArtistFavorite.get("Ju Jingyi")
+
+
+    // .contaninsKey(key): Devuelve true si la clave está en la mapa, false si no.
+    MyArtistFavorite.containsKey("Wang Churan")
+
+    // .containsValue(): Devuelve true si el valor value está en la mapa, false si no.
+    MyArtistFavorite.containsValue(23)
+
+    val MyFavoriteArtist = mutableMapOf("Ju Jingyi" to 27, "Wang Churan" to 23)
+    val MyFavorite = mutableMapOf("Sandra Ma" to 35, "Feng Timo" to 31)
+
+    // MÉTODOS DE MODIFICACIÓN
+    //put(key, value): Agrega un elemento nuevo al mapa.
+    MyFavoriteArtist.put("Gloria",32)
+    //putAll(map): Agrega todos los elementos de un mapa a otro mapa.
+    MyFavorite.putAll(MyFavoriteArtist)
+    println(MyFavorite)
+    //remove(key): Elimina el elemento asociado a la clave key del mapa.
+    MyFavorite.remove("Feng Timo")
+
+    println(MyFavorite)
+
+    // MÉTODOS DE ITERACIÓN:
+
+    // forEach(): Ejecuta un bloque de código para cada elemento del mapa.
+    MyFavorite.forEach{(key, value) -> println("$key tiene $value años")}
+
+    // keys(): Devuelve una secuencia con las claves del mapa.
+    println("keys: ${MyFavorite.keys}")
+
+    // values(): Devuelve una secuencia con los valores del mapa.
+    println("values: ${MyFavorite.values}")
+
+    // MÉTODOS DE COMPARACIÓN:
+    // equals(other): Devuelve true si el mapa es igual a otro mapa, false si no.
+    println("La mapa MyFavorite es igual a la mapa MyFavoriteArtist?: ${MyFavorite.equals(MyFavoriteArtist)}")
+
+    // isEmpty(): Devuelve true si el mapa está vacío, false si no.
+    println("La mapa MyFavorite está vacía?: ${MyFavorite.isEmpty()}")
+
+    // isNotEmpty(): Devuelve true si el mapa no está vacío, false si está vacío.
+    println("La mapa MyFavorite no está vacía?: ${MyFavorite.isNotEmpty()}")
+
+    // clear(map): Elimina todos los elemento de la mapa
+    MyFavorite.clear()
+    println("Mi mapa: $MyFavorite")
+}
+
+
+// sets: Son colecciones de elementos únicos.
+fun setsc(){
+    val number = setOf(1, 2, 3, 4, 2, 1)
+    println(number)
+
+    val letters = mutableSetOf("K", "O","O","T","L","I")
+
+    letters.add("N")
+    println(letters)
+}
+
 fun main(){
     ecIfElse()
     EcWhen()
@@ -138,6 +206,8 @@ fun main(){
     EcFor()
     nulo_Dbang()
     listas()
+    mapas()
+    setsc()
 }
 
 
